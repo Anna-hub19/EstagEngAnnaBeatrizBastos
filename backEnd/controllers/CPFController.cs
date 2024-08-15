@@ -3,12 +3,12 @@ using System.Text.RegularExpressions;
 
 namespace CPFValidationAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("/[controller]")]
     [ApiController]
     public class CPFController : ControllerBase
     {
-        // GET api/cpf/validate/{cpf}
-        [HttpGet("validate/{cpf}")]
+        // GET /cpf/validar/{cpf}
+        [HttpGet("validar/{cpf}")]
         public IActionResult ValidateCPF(string cpf)
         {
             if (IsValidCPF(cpf))
