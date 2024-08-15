@@ -1,0 +1,6 @@
+@CPFValidationAPI_HostAddress = http://localhost:5124
+
+GET {{CPFValidationAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

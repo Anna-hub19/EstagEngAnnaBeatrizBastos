@@ -1,0 +1,27 @@
+<form class="container-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <div class="div-form">
+    <label for="nome">Nome</label>
+    <input class="input-form" type="text" id="nome" name="nome" [(ngModel)]="currentUser.nome" placeholder="Digite seu nome" required>
+  </div>
+  <div class="div-form">
+    <label for="data">Data de nascimento</label>
+    <input class="input-form" type="date" id="data" name="data" [(ngModel)]="currentUser.data" required>
+  </div>
+  <div class="div-form">
+    <label for="cpf">CPF</label>
+    <input class="input-form" type="text" id="cpf" name="cpf" [(ngModel)]="currentUser.cpf" placeholder="Digite seu CPF" required>
+    <div *ngIf="MessageValidationCpf" class="mensagem-validacao">{{MessageValidationCpf}}</div>
+  </div>
+  <button type="submit" class="botao-form" [disabled]=" ValidationCpf">Salvar</button>
+</form>
+
+<div *ngIf="users.length > 0">
+  <div *ngFor="let user of users; let i = index" class="card">
+    <h3> {{ user.nome }}</h3>
+    <p>Data de nascimento: {{ user.data }}</p>
+    <p>CPF: {{ user.cpf }}</p>
+    <p>Idade: {{ user.idade }}</p>
+    <button class="botao-excluir" (click)="editUser(i)">Editar</button>
+    <button class="botao-excluir" (click)="deleteUser(i)">Excluir</button>
+  </div>
+</div>
