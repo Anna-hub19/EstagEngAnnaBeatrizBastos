@@ -1,4 +1,3 @@
-# EstagEng Anna Beatriz Bastos Oliveira
 # Tecnologias utilizadas no projeto
 * HTML
 * CSS
